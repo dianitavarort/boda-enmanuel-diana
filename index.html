@@ -1119,7 +1119,8 @@
     const fieldCantidad = $('#field-cantidad');
 
     $('#pases-valor').textContent = pases;
-    for (let i = 1; i <= pases; i++) {
+    // La primera opción es la cantidad de pases asignados; se puede bajar hasta 1
+    for (let i = pases; i >= 1; i--) {
       const o = document.createElement('option');
       o.value = i;
       o.textContent = i === 1 ? '1 persona' : `${i} personas`;
