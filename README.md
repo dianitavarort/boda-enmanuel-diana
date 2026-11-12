@@ -10,7 +10,7 @@ Invitación de boda interactiva, animada y responsive (mobile-first) en **un sol
 - **Portada** — efecto arco bohemio, nombres en caligrafía y scroll suave.
 - **Cuenta regresiva** en vivo (días / horas / minutos / segundos).
 - **Ubicación** — tarjeta del venue con botones a Google Maps y Google Calendar.
-- **Código de vestimenta "Etiqueta"** — con una nota sutil: atuendos en tonos pastel.
+- **Código de vestimenta "Etiqueta"** — nota sutil: atuendos en tonos pastel, evitando negro, rojo, blanco y beige.
 - **Nota "solo adultos"** — bloque elegante y afectuoso.
 - **Lluvia de sobres** — botón *Copiar datos de cuenta* con feedback "¡Copiado!".
 - **Galería** con lightbox (teclado, gestos táctiles, hover suave).
