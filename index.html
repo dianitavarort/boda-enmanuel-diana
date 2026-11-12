@@ -9,8 +9,13 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Enmanuel & Diana · Nuestra Boda">
   <meta property="og:description" content="Domingo 20 de diciembre de 2026 · 5:00 pm · Zona Social Riviera del Este">
-  <meta property="og:image" content="img/hero.jpg">
+  <meta property="og:image" content="https://dianitavarort.github.io/boda-enmanuel-diana/img/whatsapp-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:image:alt" content="Sobre de invitación de la boda de Enmanuel y Diana">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233B4A32'/%3E%3Ccircle cx='25' cy='36' r='13' fill='none' stroke='%23D8C197' stroke-width='3'/%3E%3Ccircle cx='39' cy='36' r='13' fill='none' stroke='%23D8C197' stroke-width='3'/%3E%3C/svg%3E">
   <script>document.documentElement.classList.add('js','sobre-visible');</script>
   <noscript><style>.sobre{display:none !important}</style></noscript>
@@ -71,7 +76,8 @@
 
     .container{width:min(92vw,1060px);margin-inline:auto}
     section{position:relative;padding:clamp(3.4rem,9vw,5.8rem) 0}
-    .bg-soft{background:linear-gradient(180deg,var(--marfil),var(--crema))}
+    .bg-soft{background-image:url('img/fondo-labrado.jpg');background-size:cover;background-position:center}
+    .bg-soft::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,240,.5),rgba(244,238,223,.5));pointer-events:none}
 
     /* ============ Encabezados de sección ============ */
     .section-head{max-width:36rem;margin:0 auto clamp(2.2rem,6vw,3.4rem);text-align:center}
@@ -119,12 +125,29 @@
       display:flex;align-items:center;justify-content:center;
       text-align:center;overflow:hidden;
       padding:4.2rem 0 3rem;
-      background:radial-gradient(130% 55% at 50% 0%, #FFFDF6 0%, var(--marfil) 55%);
+      background:url('img/fondo-labrado.jpg') center/cover no-repeat;
     }
-    .branch{position:absolute;top:-26px;width:min(38vw,170px);opacity:.4;color:var(--verde-500);z-index:0}
-    .branch-izq{left:max(-3vw,-42px)}
-    .branch-der{right:max(-3vw,-42px);transform:scaleX(-1)}
-    .branch svg{width:100%;height:auto;display:block;transform-origin:top center;animation:sway 7s ease-in-out infinite alternate}
+    .hero::before{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:radial-gradient(130% 60% at 50% 0%, rgba(255,253,246,.82) 0%, rgba(251,248,240,.55) 60%);
+    }
+    /* ============ Flores decorativas (estilo Bridgerton) ============ */
+    .flor-esquina{position:absolute;z-index:2;pointer-events:none;opacity:1;filter:drop-shadow(0 10px 22px rgba(44,58,38,.22))}
+    .flor-esquina img{width:100%;height:auto;display:block}
+    .fe-tl{top:0;left:0;width:clamp(190px,36vw,380px)}
+    .fe-tr{top:0;right:0;width:clamp(190px,36vw,380px)}
+    .fe-tr img{transform:scaleX(-1)}
+    .fe-br{bottom:0;right:0;width:clamp(190px,36vw,380px)}
+    .flor{position:absolute;z-index:0;pointer-events:none;opacity:.8;width:clamp(70px,12vw,125px)}
+    .flor img{width:100%;height:auto;display:block}
+    .flor-izq{left:clamp(-6px,1vw,10px)}
+    .flor-der{right:clamp(-6px,1vw,10px)}
+    section .container,.footer .container{position:relative;z-index:1}
+    .footer{position:relative}
+    @media (max-width:559px){
+      .flor{opacity:.6;width:clamp(56px,12vw,80px)}
+      .fe-tl,.fe-tr,.fe-br{width:clamp(160px,32vw,210px)}
+    }
     .hero-in{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;width:min(88vw,620px)}
     .hero-in > *{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
     .js .hero-in > *{animation-play-state:paused}
@@ -136,10 +159,10 @@
     .hero-in > *:nth-child(5){animation-delay:.6s}
     .hero-in > *:nth-child(6){animation-delay:.7s}
     .hero-in > *:nth-child(7){animation-delay:.85s}
-    .hero-kicker{font-size:.72rem;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--oro-oscuro)}
+    .hero-kicker{font-family:var(--font-script);font-weight:400;font-size:clamp(1.9rem,7vw,2.7rem);line-height:1.2;letter-spacing:.02em;color:var(--oro-oscuro);text-shadow:0 1px 2px rgba(138,107,45,.22)}
     .arch{position:relative;width:min(64vw,310px);margin-top:1.3rem}
     .arch img{
-      width:100%;aspect-ratio:3/4;object-fit:cover;
+      width:100%;aspect-ratio:4/5;object-fit:cover;
       border-radius:999px 999px 0 0;
       box-shadow:0 34px 60px -26px rgba(44,58,38,.45);
     }
@@ -151,7 +174,7 @@
       margin-top:-.52em;position:relative;z-index:2;
       text-shadow:0 0 22px rgba(251,248,240,.98),0 2px 10px rgba(251,248,240,.95);
     }
-    .amp{color:var(--oro);padding-inline:.12em}
+    .amp{color:var(--oro-oscuro);padding-inline:.12em;text-shadow:0 1px 2px rgba(138,107,45,.35)}
     .hero-quote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.05rem,3.8vw,1.3rem);color:var(--texto-suave);max-width:30ch;margin-top:1.1rem;line-height:1.5}
     .hero-quote-by{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--oro-texto);margin-top:.7rem}
     .hero-fecha{
@@ -277,7 +300,7 @@
       position:relative;width:100%;display:block;overflow:hidden;
       border-radius:1.1rem;cursor:zoom-in;padding:0;
     }
-    .g-item img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+    .g-item img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
     .g-item::after{
       content:"";position:absolute;inset:0;border-radius:inherit;
       box-shadow:inset 0 0 0 1px rgba(194,164,92,0),inset 0 -60px 60px -60px rgba(42,52,36,.55);
@@ -408,6 +431,19 @@
     .cta-flotante:hover{transform:translate(-50%,0) scale(1.03)}
     .cta-flotante:focus-visible{outline:2px solid var(--verde-800);outline-offset:3px}
 
+    /* ============ Botón de música ============ */
+    .btn-musica{
+      position:fixed;z-index:110;top:calc(1rem + env(safe-area-inset-top,0px));right:1rem;
+      width:44px;height:44px;border-radius:50%;
+      border:1px solid rgba(216,193,151,.6);color:var(--oro-claro);
+      background:rgba(42,52,36,.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+      display:flex;align-items:center;justify-content:center;
+      transition:background .25s,color .25s,transform .25s;
+    }
+    .btn-musica svg{width:20px;height:20px}
+    .btn-musica:hover{background:var(--oro);color:var(--verde-900)}
+    .btn-musica:focus-visible{outline:2px solid var(--oro-claro);outline-offset:3px}
+
     /* ============ Sobre de introducción (estilo Bridgerton) ============ */
     .sobre{
       position:fixed;inset:0;z-index:120;
@@ -511,55 +547,30 @@
       <img class="env-img env-cerrada" src="img/SobreCerrado.png" alt="" aria-hidden="true" fetchpriority="high">
     </button>
     <p class="sobre-hint">Toca el sobre para abrir tu invitación</p>
+    <!-- 🎵 Canción de la invitación (coloca tu MP3 en audio/cancion.mp3) -->
+    <audio id="musica" src="audio/cancion.mp3" loop preload="auto"></audio>
   </div>
+
+  <!-- Botón para silenciar / activar la música -->
+  <button type="button" id="btn-musica" class="btn-musica" hidden aria-label="Silenciar música">
+    <svg id="ic-sonido" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+    <svg id="ic-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M22 9l-6 6"/><path d="M16 9l6 6"/></svg>
+  </button>
 
   <!-- ═══════════ 1 · PORTADA ═══════════ -->
   <header class="hero" id="portada">
-    <div class="branch branch-izq" aria-hidden="true">
-      <svg viewBox="0 0 120 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M60 10 C 52 90, 68 170, 58 250" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-        <g fill="currentColor">
-          <ellipse cx="38" cy="48" rx="17" ry="9" transform="rotate(-28 38 48)"/>
-          <ellipse cx="84" cy="72" rx="17" ry="9" transform="rotate(24 84 72)"/>
-          <ellipse cx="36" cy="104" rx="17" ry="9" transform="rotate(-24 36 104)"/>
-          <ellipse cx="86" cy="128" rx="17" ry="9" transform="rotate(26 86 128)"/>
-          <ellipse cx="40" cy="160" rx="16" ry="8.5" transform="rotate(-26 40 160)"/>
-          <ellipse cx="82" cy="184" rx="16" ry="8.5" transform="rotate(24 82 184)"/>
-          <ellipse cx="46" cy="216" rx="14" ry="7.5" transform="rotate(-22 46 216)"/>
-          <ellipse cx="74" cy="238" rx="13" ry="7" transform="rotate(20 74 238)"/>
-        </g>
-        <g fill="#C2A45C">
-          <circle cx="52" cy="86" r="4"/>
-          <circle cx="70" cy="146" r="4"/>
-          <circle cx="54" cy="196" r="4"/>
-        </g>
-      </svg>
+        <!-- Flores esquina superior (estilo Bridgerton) -->
+    <div class="flor-esquina fe-tl" aria-hidden="true">
+      <img src="img/esquina-superior.png" alt="">
     </div>
-    <div class="branch branch-der" aria-hidden="true">
-      <svg viewBox="0 0 120 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M60 10 C 52 90, 68 170, 58 250" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-        <g fill="currentColor">
-          <ellipse cx="38" cy="48" rx="17" ry="9" transform="rotate(-28 38 48)"/>
-          <ellipse cx="84" cy="72" rx="17" ry="9" transform="rotate(24 84 72)"/>
-          <ellipse cx="36" cy="104" rx="17" ry="9" transform="rotate(-24 36 104)"/>
-          <ellipse cx="86" cy="128" rx="17" ry="9" transform="rotate(26 86 128)"/>
-          <ellipse cx="40" cy="160" rx="16" ry="8.5" transform="rotate(-26 40 160)"/>
-          <ellipse cx="82" cy="184" rx="16" ry="8.5" transform="rotate(24 82 184)"/>
-          <ellipse cx="46" cy="216" rx="14" ry="7.5" transform="rotate(-22 46 216)"/>
-          <ellipse cx="74" cy="238" rx="13" ry="7" transform="rotate(20 74 238)"/>
-        </g>
-        <g fill="#C2A45C">
-          <circle cx="52" cy="86" r="4"/>
-          <circle cx="70" cy="146" r="4"/>
-          <circle cx="54" cy="196" r="4"/>
-        </g>
-      </svg>
+    <div class="flor-esquina fe-tr" aria-hidden="true">
+      <img src="img/esquina-superior.png" alt="">
     </div>
 
     <div class="hero-in">
       <p class="hero-kicker">Nuestra boda</p>
       <div class="arch">
-        <img src="img/hero.jpg" alt="Enmanuel y Diana abrazados bajo un olivo a la luz dorada del atardecer" width="720" height="960" fetchpriority="high">
+        <img src="img/hero.jpg" alt="Foto de Enmanuel y Diana" width="720" height="900" fetchpriority="high">
       </div>
       <h1 class="hero-nombres">Enmanuel <span class="amp">&</span> Diana</h1>
       <p class="hero-quote">«El amor es paciente, es bondadoso; todo lo cree, todo lo espera, todo lo soporta. Y el amor nunca deja de ser.»</p>
@@ -594,6 +605,7 @@
 
     <!-- ═══════════ 3 · UBICACIÓN ═══════════ -->
     <section id="lugar" class="section" aria-labelledby="lugar-title">
+      <div class="flor flor-der" style="top:5%" aria-hidden="true" data-reveal><img src="img/flor-1.png" alt=""></div>
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="kicker">Ubicación</p>
@@ -601,13 +613,14 @@
           <p class="lead">Rodeados de naturaleza y buena energía, celebraremos la ceremonia y la recepción en un mismo lugar.</p>
         </div>
         <article class="venue-card" data-reveal style="--d:.12s">
-          <div class="venue-media">
-            <img src="img/galeria-4.jpg" alt="Mesa decorada con velas, eucalipto y detalles dorados" loading="lazy" width="960" height="600">
-          </div>
           <div class="venue-body">
             <h3>Zona Social Riviera del Este</h3>
             <p class="venue-address" id="venue-address" hidden></p>
             <div class="venue-times">
+              <span class="time-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3.2v4M16 3.2v4M3.5 10.2h17"/></svg>
+                Llegada · 4:30 pm
+              </span>
               <span class="time-chip">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                 Ceremonia · 5:00 pm
@@ -617,7 +630,7 @@
                 Recepción · 6:00 pm
               </span>
             </div>
-            <p class="venue-note">Te esperamos un ratito antes para recibirte con una sonrisa. ¡No llegues tarde al brindis!</p>
+            <p class="venue-note">Las puertas se abren a las 4:30 pm y te recibiremos con una sonrisa; así nos acompañas desde el inicio. ¡No llegues tarde al brindis!</p>
             <div class="venue-actions">
               <a id="btn-maps" class="btn btn-solid" target="_blank" rel="noopener"
                  href="https://www.google.com/maps/search/?api=1&query=Zona%20Social%20Riviera%20del%20Este">
@@ -637,6 +650,7 @@
 
     <!-- ═══════════ 4 · CÓDIGO DE VESTIMENTA ═══════════ -->
     <section id="vestimenta" class="section bg-soft" aria-labelledby="dress-title">
+      <div class="flor flor-izq" style="top:12%" aria-hidden="true" data-reveal><img src="img/flor-2.png" alt=""></div>
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="kicker">Dress code</p>
@@ -656,6 +670,7 @@
 
     <!-- ═══════════ 5 · SOLO ADULTOS ═══════════ -->
     <section id="ninos" class="section" aria-labelledby="ninos-title">
+      <div class="flor flor-der" style="top:16%" aria-hidden="true" data-reveal><img src="img/flor-1.png" alt=""></div>
       <div class="container">
         <div class="kids-card" data-reveal>
           <span class="kids-icon">
@@ -670,6 +685,7 @@
 
     <!-- ═══════════ 6 · LLUVIA DE SOBRES ═══════════ -->
     <section id="lluvia" class="section bg-soft" aria-labelledby="sobres-title">
+      <div class="flor flor-izq" style="top:8%" aria-hidden="true" data-reveal><img src="img/flor-2.png" alt=""></div>
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="kicker">Lluvia de sobres</p>
@@ -699,6 +715,7 @@
 
     <!-- ═══════════ 7 · GALERÍA ═══════════ -->
     <section id="galeria" class="section" aria-labelledby="gal-title">
+      <div class="flor flor-der" style="top:10%" aria-hidden="true" data-reveal><img src="img/flor-1.png" alt=""></div>
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="kicker">Nuestros momentos</p>
@@ -707,27 +724,15 @@
         </div>
         <div class="g-grid">
           <figure class="g-cell" data-reveal>
-            <button class="g-item" type="button" data-src="img/galeria-1.jpg" data-cap="Nuestro sí quiero" aria-label="Ampliar foto: nuestro sí quiero">
-              <img src="img/galeria-1.jpg" alt="Enmanuel y Diana retratados en un campo dorado" loading="lazy" width="800" height="1000">
-              <span class="g-cap">Nuestro sí quiero</span>
+            <button class="g-item" type="button" data-src="img/galeria-1.jpg" data-cap="Nuestro amor" aria-label="Ampliar foto: nuestro amor">
+              <img src="img/galeria-1.jpg" alt="Foto de Enmanuel y Diana" loading="lazy" width="800" height="800">
+              <span class="g-cap">Nuestro amor</span>
             </button>
           </figure>
           <figure class="g-cell" data-reveal style="--d:.08s">
-            <button class="g-item" type="button" data-src="img/galeria-2.jpg" data-cap="Sí, acepto" aria-label="Ampliar foto: sí, acepto">
-              <img src="img/galeria-2.jpg" alt="Manos con argollas de boda doradas sobre eucalipto" loading="lazy" width="800" height="1000">
-              <span class="g-cap">Sí, acepto</span>
-            </button>
-          </figure>
-          <figure class="g-cell" data-reveal style="--d:.16s">
-            <button class="g-item" type="button" data-src="img/galeria-3.jpg" data-cap="Caminos que se unen" aria-label="Ampliar foto: caminos que se unen">
-              <img src="img/galeria-3.jpg" alt="Los novios caminando de la mano entre olivos" loading="lazy" width="800" height="1000">
-              <span class="g-cap">Caminos que se unen</span>
-            </button>
-          </figure>
-          <figure class="g-cell" data-reveal style="--d:.24s">
-            <button class="g-item" type="button" data-src="img/galeria-5.jpg" data-cap="El baile que soñamos" aria-label="Ampliar foto: el baile que soñamos">
-              <img src="img/galeria-5.jpg" alt="Silueta de los novios bailando al atardecer" loading="lazy" width="800" height="1000">
-              <span class="g-cap">El baile que soñamos</span>
+            <button class="g-item" type="button" data-src="img/galeria-2.jpg" data-cap="Juntos, siempre" aria-label="Ampliar foto: juntos, siempre">
+              <img src="img/galeria-2.jpg" alt="Foto de Enmanuel y Diana" loading="lazy" width="800" height="800">
+              <span class="g-cap">Juntos, siempre</span>
             </button>
           </figure>
         </div>
@@ -736,6 +741,7 @@
 
     <!-- ═══════════ 8 · RSVP POR WHATSAPP ═══════════ -->
     <section id="rsvp" class="rsvp" aria-labelledby="rsvp-title">
+      <div class="flor flor-izq" style="top:12%;opacity:.55" aria-hidden="true" data-reveal><img src="img/flor-2.png" alt=""></div>
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="kicker">Confirma antes del 8 de diciembre de 2026</p>
@@ -768,8 +774,8 @@
             <p class="field-note" id="cantidad-nota"></p>
           </div>
           <div class="field">
-            <label for="mensaje">Mensaje o restricciones alimentarias <span class="opcional">(opcional)</span></label>
-            <textarea id="mensaje" name="mensaje" maxlength="300" placeholder="Escríbenos algo lindo o cuéntanos si tienes alguna restricción alimenticia…"></textarea>
+            <label for="mensaje">Mensaje <span class="opcional">(opcional)</span></label>
+            <textarea id="mensaje" name="mensaje" maxlength="300" placeholder="Escríbenos algo lindo…"></textarea>
           </div>
           <button type="submit" class="btn btn-gold btn-block btn-wa">
             <svg viewBox="0 0 24 24" aria-hidden="true" data-icon="wa"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -784,6 +790,9 @@
 
   <!-- ═══════════ FOOTER ═══════════ -->
   <footer class="footer">
+    <div class="flor-esquina fe-br" aria-hidden="true">
+      <img src="img/esquina-inferior.png" alt="">
+    </div>
     <div class="container">
       <p class="footer-names">Enmanuel <span class="amp">&</span> Diana</p>
       <div class="divider" aria-hidden="true">
@@ -831,7 +840,7 @@
 
       // 📱 WhatsApp que recibirá las confirmaciones:
       // código de país + número, SIN “+”, sin espacios ni guiones. Ej.: '5215512345678'
-      whatsappNumber: '00000000000',
+      whatsappNumber: '573222020023',
 
       // 🏛️ Lugar del evento
       venue: {
@@ -842,10 +851,10 @@
 
       // 💰 Datos de la lluvia de sobres
       bank: {
-        banco: 'Nombre del Banco',                      // ← ej. 'Banco General'
-        tipo: 'Cuenta de ahorros',                      // ← ej. 'Cuenta corriente'
-        titular: 'Enmanuel y Diana',                    // ← titular de la cuenta
-        numero: '0000 0000 0000 0000',                 // ← número de cuenta
+        banco: 'Bancolombia',                          // ← ej. 'Banco General'
+        tipo: 'Cuenta de ahorros',                     // ← ej. 'Cuenta corriente'
+        titular: 'Diana Vargas',                       // ← titular de la cuenta
+        numero: '497 982 497 37',                       // ← número de cuenta
         extra: ''                                      // ← opcional: CLABE, alias, email…
       },
 
@@ -887,9 +896,31 @@
       principal.focus({ preventScroll: true });
     }
 
+    /* ---------- Música de la invitación ---------- */
+    const musica = $('#musica');
+    const btnMusica = $('#btn-musica');
+    const icSonido = $('#ic-sonido');
+    const icMute = $('#ic-mute');
+    let musicaOn = true;
+    if (musica && btnMusica) {
+      // El botón aparece solo si el archivo de audio existe y carga bien
+      musica.addEventListener('loadeddata', () => { btnMusica.hidden = false; });
+      if (musica.readyState >= 1) btnMusica.hidden = false;
+      btnMusica.addEventListener('click', () => {
+        musicaOn = !musicaOn;
+        if (musicaOn) { musica.play().catch(() => {}); }
+        else { musica.pause(); }
+        icSonido.hidden = !musicaOn;
+        icMute.hidden = musicaOn;
+        btnMusica.setAttribute('aria-label', musicaOn ? 'Silenciar música' : 'Activar música');
+      });
+    }
+
     btnSobre.addEventListener('click', () => {
       if (sobre.classList.contains('abierto')) return;
       sobre.classList.add('abierto');
+      // 🎵 La canción suena al abrir la invitación (gesto del usuario = permitido)
+      if (musica && musicaOn) musica.play().catch(() => {});
       // Las animaciones de la portada arrancan justo al abrir el sobre
       document.documentElement.classList.add('sobre-listo');
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
